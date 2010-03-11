@@ -103,4 +103,3 @@ void board_getvar(const char *name, char *value)
         get_version_modem_sbl(value);
     }
 }
-

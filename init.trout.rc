@@ -22,7 +22,7 @@ on early-init
 on boot
 # unmap left alt to avoid console switch
     setkey 0x0 0x38 0x0
-# dream reset SEND+MENU+END
+# reset SEND+MENU+END
     setkey 0x0 0xe7 0x706
     setkey 0x0 0x8b 0x707
 
@@ -45,6 +45,12 @@ on boot
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
     chmod 0660                /sys/class/rfkill/rfkill0/state
+
+    # cpufreq configurations
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 245760
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor ondemand
+    write /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate 40000
+    write /sys/devices/system/cpu/cpufreq/ondemand/up_threshold 85
 
 # compass/accelerometer daemon
 service akmd /system/bin/akmd

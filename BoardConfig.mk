@@ -74,6 +74,11 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 # OpenGL drivers config file path
 BOARD_EGL_CFG := device/htc/dream/egl.cfg
 
+# No fallback font by default (space savings)
+NO_FALLBACK_FONT:=true
+
 TARGET_RECOVERY_UI_LIB := librecovery_ui_dream librecovery_ui_htc
 
 TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_htc
+
+TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common

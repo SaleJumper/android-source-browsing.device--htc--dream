@@ -13,7 +13,7 @@
 # limitations under the License.
 
 #
-# system.prop for dream
+# system.prop for dream or sapphire
 #
 
 rild.libpath=/system/lib/libhtc_ril.so

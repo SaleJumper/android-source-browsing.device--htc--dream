@@ -72,4 +72,3 @@ void keypad_init(void)
     gpio_keypad_init(&dream_keypad);
     boot_register_poll_func(keypad_poll);
 }
-

@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2008 The Android Open-Source Project
+# Copyright (C) 2008 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,17 +14,10 @@
 # limitations under the License.
 #
 
-# To be included directly by a device_dream_*.mk makefile;
-# do not use inherit-product on this file.
-
-$(call inherit-product-if-exists, vendor/htc/dream/device_dream-vendor.mk)
-# stuff common to all HTC phones
-$(call inherit-product, device/htc/common/common_small.mk)
-
-DEVICE_PACKAGE_OVERLAYS := device/htc/dream/overlay $(DEVICE_PACKAGE_OVERLAYS)
+DEVICE_PACKAGE_OVERLAYS := device/htc/dream/overlay
 
 # Install the features available on this device.
-PRODUCT_COPY_FILES += \
+PRODUCT_COPY_FILES := \
     frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
     frameworks/base/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
     frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
@@ -32,6 +25,16 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/base/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml
 
-# media profiles and capabilities spec
-include device/htc/dream/media_profiles.mk
+PRODUCT_PROPERTY_OVERRIDES := \
+    ro.media.dec.jpeg.memcap=10000000
+
+# media configuration xml file
+PRODUCT_COPY_FILES += \
+    device/htc/dream/media_profiles.xml:/system/etc/media_profiles.xml
+
+# proprietary side of the device
+$(call inherit-product-if-exists, vendor/htc/dream/device_dream-vendor.mk)
+
+# stuff common to all HTC phones
+$(call inherit-product, device/htc/common/common_small.mk)
 

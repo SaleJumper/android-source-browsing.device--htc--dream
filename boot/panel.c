@@ -27,4 +27,3 @@ void panel_poweron(void)
 void panel_backlight(int on)
 {
 }
-

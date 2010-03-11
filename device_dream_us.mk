@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2008 The Android Open-Source Project
+# Copyright (C) 2008 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,9 +14,7 @@
 # limitations under the License.
 #
 
-# To be included directly by a product makefile; do not use inherit-product.
-
-PRODUCT_COPY_FILES += \
+PRODUCT_COPY_FILES := \
 	device/htc/dream/gps.conf_US:system/etc/gps.conf
 
 $(call inherit-product-if-exists, vendor/htc/dream/device_dream_us-vendor.mk)

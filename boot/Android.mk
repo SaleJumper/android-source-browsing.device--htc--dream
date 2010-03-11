@@ -1,4 +1,4 @@
-# Copyright (C) 2008 The Android Open Source Project
+# Copyright (C) 2007 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,6 +14,8 @@
 
 LOCAL_PATH:= $(call my-dir)
 
+ifneq ($(TARGET_SIMULATOR),true)
+
 include $(CLEAR_VARS)
 
 LOCAL_ARM_MODE := arm
@@ -28,3 +30,6 @@ LOCAL_CFLAGS += -march=armv6
 LOCAL_MODULE := libboot_board_dream
 
 include $(BUILD_RAW_STATIC_LIBRARY)
+
+endif # !TARGET_SIMULATOR
+

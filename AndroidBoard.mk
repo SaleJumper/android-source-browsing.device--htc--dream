@@ -57,12 +57,6 @@ ALL_PREBUILT += $(file)
 $(file) : $(LOCAL_PATH)/init.trout.rc | $(ACP)
 	$(transform-prebuilt-to-target)
 
-# to build the bootloader you need the common boot stuff,
-# the architecture specific stuff, and the board specific stuff
-include device/htc/dream/boot/Android.mk
-
-LOCAL_PATH := device/htc/dream
-
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := trout-keypad.kcm
 include $(BUILD_KEY_CHAR_MAP)
@@ -79,16 +73,11 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES := trout-keypad-qwertz.kcm
 include $(BUILD_KEY_CHAR_MAP)
 
-
-# This will install the file in /system/etc
-#
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE := vold.fstab
 LOCAL_SRC_FILES := $(LOCAL_MODULE)
 include $(BUILD_PREBUILT)
-
-# WiFi driver and firmware
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := wlan.ko
@@ -97,11 +86,5 @@ LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT)/lib/modules
 LOCAL_SRC_FILES := $(LOCAL_MODULE)
 include $(BUILD_PREBUILT)
-
-# hardware modules
-include device/htc/dream/libsensors/Android.mk
-
-# build subdirs
-include $(call all-subdir-makefiles)
 
 -include vendor/htc/dream/AndroidBoardVendor.mk

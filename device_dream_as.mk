@@ -15,7 +15,7 @@
 #
 
 PRODUCT_COPY_FILES := \
-	device/htc/dream/gps.conf_EU:system/etc/gps.conf
+	device/htc/dream/gps.conf_AS:system/etc/gps.conf
 
-$(call inherit-product-if-exists, vendor/htc/dream/device_dream_eu-vendor.mk)
+$(call inherit-product-if-exists, vendor/htc/dream/device_dream_as-vendor.mk)
 $(call inherit-product, device/htc/dream/device_dream.mk)

@@ -2,7 +2,7 @@
 <!--
 /* 
 **
-** Copyright 2009, The Android Open Source Project
+** Copyright 2008, The Android Open Source Project
 **
 ** Licensed under the Apache License, Version 2.0 (the "License"); 
 ** you may not use this file except in compliance with the License. 
@@ -18,7 +18,6 @@
 */
 -->
 <resources>
-    <!-- Whether or not auto-correction should be enabled by default.
-         Smaller dictionaries on Dream -->
-    <bool name="enable_autocorrect">false</bool>
+    <!-- Whether or not auto-correction should be enabled by default -->
+    <bool name="enable_autocorrect">true</bool>
 </resources>
