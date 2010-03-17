@@ -24,7 +24,7 @@ LOCAL_PRELINK_MODULE := false
 LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
 LOCAL_SHARED_LIBRARIES := liblog libcutils
 LOCAL_SRC_FILES := sensors.c
-LOCAL_MODULE := sensors.dream
+LOCAL_MODULE := sensors.trout
 include $(BUILD_SHARED_LIBRARY)
 
 endif # !TARGET_SIMULATOR
