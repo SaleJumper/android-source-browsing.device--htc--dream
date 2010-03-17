@@ -16,6 +16,9 @@
 
 DEVICE_PACKAGE_OVERLAYS := device/htc/dream/overlay
 
+PRODUCT_PACKAGES := \
+    sensors.trout
+
 # proprietary side of the device
 $(call inherit-product-if-exists, vendor/htc/dream/device_dream-vendor.mk)
 
